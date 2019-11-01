@@ -134,14 +134,32 @@
         </table></td>
     </tr>
 
+
     <tr>
         <td height="1" align="center" valign="top" >
             <table width="100%" cellspacing="10" cellpadding="0">
             <tr>
-                <td width="26%" height="35" align="right"  valign="middle">登报人姓名：</td>
-                <td width="26%" height="35" valign="middle">登报人电话：</td>
-                <td width="26%" height="35" valign="middle">登报人需求：</td>
+                <td width="26%" height="35" valign="middle">姓名</td>
+                <td width="26%" height="35" valign="middle">日期</td>
+                <td width="26%" height="35" valign="middle">状态</td>
+                <td width="26%" height="35" valign="middle">操作</td>
             </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td height="1" align="center" valign="top" >
+            <table width="100%" cellspacing="10" cellpadding="0">
+                <tr>
+                    <a href="show.jsp?id="><td width="26%" height="35" valign="middle">范建伟</td></a>
+                    <td width="26%" height="35" valign="middle">2019-01-1</td>
+                    <td width="26%" height="35" valign="middle">已通过</td>
+                    <td width="26%" height="35" valign="middle">
+                        <img src="IMG/ico_tel.png" width="50px" height="50px"   alt="打电话">
+                        <img src="IMG/ico_ve.png"  width="50px" height="50px"   alt="审核">
+                    </td>
+                </tr>
             </table>
         </td>
     </tr>
