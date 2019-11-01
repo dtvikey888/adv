@@ -18,6 +18,7 @@ public class AdvTool {
 
             MysqlDB db = new MysqlDB();
             String sql = "insert into adv(xm,tel,memo,create_time) values('"+xm+"','"+tel+"','"+memo+"','"+TimeString.nowTime()+"')";
+            System.out.println(sql);
             db.executeInsert(sql);
 
             //发短信功能
@@ -57,6 +58,23 @@ public class AdvTool {
 
         return m.matches();
 
+    }
+
+    public static String GetHtml(){
+        String ss = "";
+        try {
+            MysqlDB db = new MysqlDB();
+            String sql = "select memo from adv_ggrl where id=6";
+            ResultSet rs = db.executeQuery(sql);
+            if (rs.next()){
+                ss = rs.getString(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        return  ss;
     }
 
 }
