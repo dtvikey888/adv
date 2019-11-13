@@ -1,6 +1,37 @@
 <%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="com.adv.util.MysqlDB" %>
 <%@ page import="java.sql.ResultSet" %>
+<%
+int id = new Integer(request.getParameter("id"));
+    String xm,tel,memo,create_time,bz2;
+    int bz=0;
+    xm="";
+    tel="";
+    memo="";
+    create_time="";
+    bz2="";
+
+    try {
+        MysqlDB db = new MysqlDB();
+        String sql="select xm,tel,memo,create_time,bz from adv where id="+id;
+        ResultSet rs = db.executeQuery(sql);
+
+        if (rs.next()){
+            xm=rs.getString(1);
+            tel=rs.getString(2);
+            memo=rs.getString(3);
+            create_time=rs.getString(4);
+            bz = rs.getInt(5);
+            if (bz==1){
+                bz2="<font color=red>通过</font>";
+            }else{
+                bz2="待审";
+            }
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
@@ -52,7 +83,8 @@
             <tr>
                 <td align="center" valign="top"><table width="100%" cellspacing="0" cellpadding="0">
                     <tr>
-                        <td align="center"><div onclick="window.open('index.jsp','_self')" style="width:50px; height:50px; float:center; border-radius: 50%; border: 0px solid #eee; overflow: hidden; background-color:#900" ><img src="IMG/ico_01.png" /></div></td>
+                        <td align="center"><div style="width:50px; height:50px; float:center; border-radius: 50%; border: 0px solid #eee; overflow: hidden; background-color:#900" > <a
+                                href="index.jsp"><img src="IMG/ico_01.png" /></a></div></td>
                     </tr>
                     <tr>
                         <td><table width="100%" cellspacing="5" cellpadding="0">
@@ -122,61 +154,35 @@
         </table></td>
     </tr>
 
-
     <tr>
         <td height="1" align="center" valign="top" >
             <table width="100%" cellspacing="10" cellpadding="0">
             <tr>
-                <td width="26%" height="35" valign="middle">姓名</td>
-                <td width="26%" height="35" valign="middle">日期</td>
-                <td width="26%" height="35" valign="middle">状态</td>
-                <td width="26%" height="35" valign="middle">操作</td>
+                <td width="26%" height="35" align="right" valign="middle">登报人姓名：</td>
+                <td width="74%" height="35" ><%=xm%></td>
+            </tr>
+            <tr>
+                <td width="26%" height="35" align="right" valign="middle">联系方式：</td>
+                <td height="35"><%=tel%></td>
+            </tr>
+            <tr>
+                <td height="35" align="right" valign="middle">登报内容：</td>
+                <td height="35"><%=memo%></td>
+            </tr>
+            <tr>
+                <td height="35" align="right" valign="middle">提交时间：</td>
+                <td height="35"><%=create_time%></td>
+            </tr>
+            <tr>
+                <td height="35" align="right" valign="middle">标志：</td>
+                <td height="35"><%=bz2%></td>
             </tr>
             </table>
         </td>
     </tr>
-    <%
-        try{
-            MysqlDB db = new MysqlDB();
-            String sql="select id,xm,tel,create_time,bz from adv";
-            ResultSet rs= db.executeQuery(sql);
-            String bz2="";
-            while (rs.next()){
-                int id=rs.getInt(1);
-                String xm=rs.getString(2);
-                String tel=rs.getString(3);
-                String create_time=rs.getString(4);
-                int bz = rs.getInt(5);
-                if (bz==1){
-                    bz2="<font color=red>通过</font>";
-                }else{
-                    bz2="待审";
-                }
-    %>
-    <tr>
-        <td height="1" align="center" valign="top" >
-            <table width="100%" cellspacing="10" cellpadding="0">
-                <tr>
-                    <td width="25%" height="35" valign="middle"><a href="show.jsp?id=<%=id%>"><%=xm%></a></td>
-                    <td width="25%" height="35" valign="middle"><a href="show.jsp?id=<%=id%>"><%=create_time%></a></td>
-                    <td width="10%" height="35" valign="middle"><%=bz2%></td>
-                    <td width="40%" height="35" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="bz_chk.jsp?id=<%=id%>&bz=<%=bz%>"><img src="IMG/ico_ve.png"  width="50px" height="50px"   alt="审核"></a>&nbsp;&nbsp;&nbsp;
-                        <a href="tel:<%=tel%>"><img src="IMG/ico_tel.png" width="50px" height="50px"   alt="打电话"></a>
 
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-    <%
-            }
-            rs.close();
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-    %>
+
 </table>
-
+</form>
 </body>
 </html>

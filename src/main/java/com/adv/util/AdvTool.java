@@ -47,6 +47,23 @@ public class AdvTool {
         }
     }
 
+    //审核
+    public static void confirm(int id ,int bz){
+        try {
+            MysqlDB db = new MysqlDB();
+            String sql="";
+            if (bz==0){
+                sql="update adv set bz=1 where id="+id;
+            }else{
+                sql="update adv set bz=0 where id="+id;
+            }
+            db.executeUpdate(sql);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     //java-正则表达式判断是否手机号
     public static boolean isMobileNO(String mobiles){
 
