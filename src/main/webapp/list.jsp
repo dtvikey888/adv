@@ -41,9 +41,9 @@
             <tr>
                 <td width="37%" align="center" bgcolor="#DAD0A7">登报流程</td>
                 <td width="63%" align="right">
-                    <span style="background: #DAD0A7;padding:8px 20px;"><a href="price.jsp">价目表</a></span>
+                    <span style="background: #af7f54;padding:8px 20px;"><a href="price.jsp">价目表</a></span>
 
-                    <span style="background: #DAD0A7;padding:8px 20px;">遗失样版</span>
+                    <span style="background: #af7f54;padding:8px 20px;">遗失样版</span>
                 </td>
             </tr>
         </table></td>
