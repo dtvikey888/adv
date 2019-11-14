@@ -41,9 +41,9 @@
             <tr>
                 <td width="37%" align="center" bgcolor="#DAD0A7">登报流程</td>
                 <td width="63%" align="right">
-                    <span style="background: #af7f54;padding:8px 20px;"><a href="price.jsp">价目表</a></span>
+                    <span style="background: #af7f54;padding:8px 20px 3px 20px;"><a href="price.jsp"><e>价目表</e></a></span>
 
-                    <span style="background: #af7f54;padding:8px 20px;">遗失样版</span>
+                    <span style="background: #af7f54;padding:8px 20px 3px 20px;"><e>遗失样版</e></span>
                 </td>
             </tr>
         </table></td>
@@ -165,8 +165,8 @@
                     <td width="25%" height="35" valign="middle"><a href="show.jsp?id=<%=id%>"><%=create_time%></a></td>
                     <td width="10%" height="35" valign="middle"><%=bz2%></td>
                     <td width="40%" height="35" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="bz_chk.jsp?id=<%=id%>&bz=<%=bz%>"><img src="IMG/ico_ve.png"  width="50px" height="50px"   alt="审核"></a>&nbsp;&nbsp;&nbsp;
-                        <a href="tel:<%=tel%>"><img src="IMG/ico_tel.png" width="50px" height="50px"   alt="打电话"></a>
+                        <a href="bz_chk.jsp?id=<%=id%>&bz=<%=bz%>"><img src="IMG/ico_ve.png"  width="40px" height="40px"   alt="审核"></a>&nbsp;&nbsp;&nbsp;
+                        <a href="tel:<%=tel%>"><img src="IMG/ico_tel.png" width="40px" height="40px"   alt="打电话"></a>
 
                     </td>
                 </tr>
