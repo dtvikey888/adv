@@ -143,7 +143,11 @@
             <table width="100%" cellspacing="10" cellpadding="0">
 
             <tr>
-                <td><img src="IMG/price.jpg" alt="" width="100%" height="520"/></td>
+                <td>
+                    <<a href="IMG/price.jpg">
+                    <img src="IMG/price.jpg" alt="" width="100%" height="520"/>
+                    </a>
+                </td>
             </tr>
 
             </table>
