@@ -71,7 +71,12 @@ int id = new Integer(request.getParameter("id"));
         <td height="35" align="center" valign="bottom" bgcolor="#990000" ><table width="90%" height="30" border="0" cellpadding="0" cellspacing="0">
             <tr>
                 <td width="37%" align="center" bgcolor="#DAD0A7">登报流程</td>
-                <td width="63%" align="right"><e>价目表</e> <e>遗失样版</e></td>
+                <td width="63%" align="right">
+
+                    <span style="background: #DAD0A7;padding:8px 20px;"><a href="price.jsp">价目表</a></span>
+
+                    <span style="background: #DAD0A7;padding:8px 20px;">遗失样版</span>
+                </td>
             </tr>
         </table></td>
     </tr>
