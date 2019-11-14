@@ -9,7 +9,7 @@
 
     AdvTool.confirm(id,bz);
 
-    out.print("<script type=\"text/javascript\">alert('您的需求提交成功了，请等待审核！');document.location.href='list.jsp';</script>");
+    out.print("<script type=\"text/javascript\">document.location.href='list.jsp';</script>");
 //out.print("<script type=\"text/javascript\">alert('现在进入作品上传!');document.location.href='UP.jsp?openid="+openid+"';</script>");
 
 %>

@@ -68,7 +68,7 @@
             <tr>
                 <td align="center" valign="top"><table width="100%" cellspacing="0" cellpadding="0">
                     <tr>
-                        <td align="center"><div style="width:50px; height:50px; float:center; border-radius: 50%; border: 0px solid #eee; overflow: hidden; background-color:#900" > <img src="IMG/ico_01.png" /></div></td>
+                        <td align="center"><div onclick="window.open('index.jsp','_self')" style="width:50px; height:50px; float:center; border-radius: 50%; border: 0px solid #eee; overflow: hidden; background-color:#900" ><img src="IMG/ico_01.png" /></div></td>
                     </tr>
                     <tr>
                         <td><table width="100%" cellspacing="5" cellpadding="0">
@@ -144,7 +144,7 @@
 
             <tr>
                 <td>
-                    <<a href="IMG/price.jpg">
+                    <a href="IMG/price.jpg">
                     <img src="IMG/price.jpg" alt="" width="100%" height="520"/>
                     </a>
                 </td>
