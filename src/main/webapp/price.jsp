@@ -16,6 +16,21 @@
         d{color:#c3c3c3;}
         e{color:#ffffff;}
     </style>
+    <style>
+        .box-content{
+            width:100%;
+            #margin:1%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .box{
+            width:100%;
+            #margin:1%;
+        }
+        .box img{
+            width:100%;
+        }
+    </style>
     <script>
         function DataLength(fData)
         {
@@ -140,13 +155,15 @@
 
     <tr>
         <td height="1" align="center" valign="top" >
-            <table width="100%" cellspacing="10" cellpadding="0">
+            <table width="100%" cellspacing="0" cellpadding="0">
 
             <tr>
                 <td>
-                    <a href="IMG/price.jpg">
-                    <img src="IMG/price.jpg" alt="" width="100%" height="520"/>
-                    </a>
+                    <div class="box-content">
+                        <div class="box" onClick="window.location.href='IMG/price.jpg'">
+                            <img src="IMG/price.jpg">
+                        </div>
+                    </div>
                 </td>
             </tr>
 
