@@ -53,7 +53,7 @@
             <tr>
                 <td width="37%" align="center" bgcolor="#DAD0A7">登报流程</td>
                 <td width="63%" align="right">
-                    <span style="background: #af7f54;padding:8px 20px 3px 20px;"><a href="plate.jsp"><e>价目表</e></a></span>
+                    <span style="background: #af7f54;padding:8px 20px 3px 20px;"><a href="price.jsp"><e>价目表</e></a></span>
 
                     <span style="background: #af7f54;padding:8px 20px 3px 20px;"><e>填写样板</e></span>
                 </td>
@@ -145,10 +145,10 @@
             <tr>
                 <td>
                     <a href="IMG/yb1.jpg">
-                    <img src="IMG/yb1.jpg" alt="" width="100%" height="520"/>
+                    <img src="IMG/yb1.jpg" alt="" width="100%" height="100%"/>
                     </a>
                     <a href="IMG/yb2.jpg">
-                        <img src="IMG/yb2.jpg" alt="" width="100%" height="520"/>
+                        <img src="IMG/yb2.jpg" alt="" width="100%" height="100%"/>
                     </a>
                 </td>
             </tr>
