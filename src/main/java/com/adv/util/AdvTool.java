@@ -28,7 +28,7 @@ public class AdvTool {
 
                 String content="";
                 if (memo.length()>30) {
-                    content=memo.substring(0,30);
+                    content=memo.substring(0,30)+"...";
                 }else {
                     content=memo;
                 }
@@ -38,7 +38,7 @@ public class AdvTool {
 
 
                 app.sendMsg(""+msgtel+"","{\"name\":\""+xm+"\", \"tel\":\""+tel+"\", \"content\":\""+content+"\", \"time\":\""+time+"\"}");
-
+                System.out.println(msgtel+xm+tel+content+time);
 
             }
 
@@ -48,12 +48,49 @@ public class AdvTool {
     }
 
     //审核
-    public static void confirm(int id ,int bz){
+    public static void confirm(int id,int bz){
         try {
             MysqlDB db = new MysqlDB();
+            String sql2="select xm,tel,memo,create_time from adv where id="+id;
+            ResultSet rs = db.executeQuery(sql2);
+            String msgtel = "";
+            String xm="";
+            String memo="";
+            String time="";
+            if (rs.next()){
+                xm=rs.getString(1);
+                msgtel=rs.getString(2);
+                memo=rs.getString(3);
+                time=rs.getString(4);
+            }
+
+
+
             String sql="";
+
             if (bz==0){
                 sql="update adv set bz=1 where id="+id;
+
+                //发短信功能
+                if(AdvTool.isMobileNO(msgtel)){
+
+                    SmsDemo app = new SmsDemo();
+
+                    String content="";
+                    if (memo.length()>30) {
+                        content=memo.substring(0,30)+"的";
+                    }else {
+                        content=memo+"的";
+                    }
+
+                    String time2 = time.substring(0,time.length()-2);
+
+                    app.sendMsg2(""+msgtel+"","{\"name\":\""+xm+"\", \"content\":\""+content+"\", \"time\":\""+time2+"\"}");
+                    System.out.println(msgtel+xm+content+time2);
+                }
+
+
+
             }else{
                 sql="update adv set bz=0 where id="+id;
             }

@@ -6,7 +6,6 @@
     int id  =  new Integer(request.getParameter("id"));
     int bz  =  new Integer(request.getParameter("bz"));
 
-
     AdvTool.confirm(id,bz);
 
     out.print("<script type=\"text/javascript\">document.location.href='list.jsp';</script>");

@@ -53,9 +53,9 @@
             <tr>
                 <td width="37%" align="center" bgcolor="#DAD0A7">登报流程</td>
                 <td width="63%" align="right">
-                    <span style="background: #af7f54;padding:8px 20px 3px 20px;"><e>价目表</e></span>
+                    <span style="background: #af7f54;padding:8px 20px 3px 20px;"><a href="plate.jsp"><e>价目表</e></a></span>
 
-                    <span style="background: #af7f54;padding:8px 20px 3px 20px;"><a href="plate.jsp"><e>填写样板</e></a></span>
+                    <span style="background: #af7f54;padding:8px 20px 3px 20px;"><e>填写样板</e></span>
                 </td>
             </tr>
         </table></td>
@@ -144,8 +144,11 @@
 
             <tr>
                 <td>
-                    <a href="IMG/price.jpg">
-                    <img src="IMG/price.jpg" alt="" width="100%" height="520"/>
+                    <a href="IMG/yb1.jpg">
+                    <img src="IMG/yb1.jpg" alt="" width="100%" height="520"/>
+                    </a>
+                    <a href="IMG/yb2.jpg">
+                        <img src="IMG/yb2.jpg" alt="" width="100%" height="520"/>
                     </a>
                 </td>
             </tr>
