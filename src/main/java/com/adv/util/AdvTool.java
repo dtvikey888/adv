@@ -47,6 +47,22 @@ public class AdvTool {
         }
     }
 
+    //留言系统
+    //完善资料
+    public static void wszl2(String memo,String tel,int type){
+        try {
+
+            MysqlDB db = new MysqlDB();
+            String sql = "insert into ly(tel,memo,fbsj,type) values('"+tel+"','"+memo+"','"+TimeString.nowTime()+"',"+type+")";
+            System.out.println(sql);
+            db.executeInsert(sql);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     //审核
     public static void confirm(int id,int bz){
         try {

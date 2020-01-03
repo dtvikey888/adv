@@ -19,12 +19,14 @@
     <style>
         .box-content{
             width:100%;
+            margin-top: 15px;
             #margin:0%;
             display: flex;
             flex-wrap: wrap;
         }
         .box{
             width:100%;
+            margin-top: 15px;
             #margin:1%;
         }
         .box img{
@@ -160,11 +162,11 @@
             <tr>
                 <td>
                     <div class="box-content">
-                        <div class="box" onClick="window.location.href='IMG/yb1.jpg'">
-                            <img src="IMG/yb1.jpg">
+                        <div class="box" onClick="window.location.href='IMG/yb1.png'">
+                            <img src="IMG/yb1.png">
                         </div>
-                        <div class="box" onClick="window.location.href='IMG/yb2.jpg'">
-                            <img src="IMG/yb2.jpg">
+                        <div class="box" onClick="window.location.href='IMG/yb2.png'">
+                            <img src="IMG/yb2.png">
                         </div>
                     </div>
                 </td>
