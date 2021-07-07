@@ -1,4 +1,37 @@
 <%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page import="com.adv.util.MysqlDB" %>
+<%@ page import="java.sql.ResultSet" %>
+<%
+int id = new Integer(request.getParameter("id"));
+    String xm,tel,memo,create_time,bz2;
+    int bz=0;
+    xm="";
+    tel="";
+    memo="";
+    create_time="";
+    bz2="";
+
+    try {
+        MysqlDB db = new MysqlDB();
+        String sql="select xm,tel,memo,create_time,bz from adv where id="+id;
+        ResultSet rs = db.executeQuery(sql);
+
+        if (rs.next()){
+            xm=rs.getString(1);
+            tel=rs.getString(2);
+            memo=rs.getString(3);
+            create_time=rs.getString(4);
+            bz = rs.getInt(5);
+            if (bz==1){
+                bz2="<font color=red>通过</font>";
+            }else{
+                bz2="待审";
+            }
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
@@ -16,24 +49,10 @@
         d{color:#c3c3c3;}
         e{color:#ffffff;}
     </style>
-    <script>
-        function DataLength(fData)
-        {
-            var intLength=0
-            for (var i=0;i<fData.length;i++)
-            {
-                if ((fData.charCodeAt(i) < 0) || (fData.charCodeAt(i) > 255))
-                    intLength=intLength+2
-                else
-                    intLength=intLength+1
-            }
-            return intLength
-        }
-    </script>
 </head>
 
 <body>
-<form name="form1" action="tj_chk.jsp" method="post">
+
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
     <tr>
         <td height="140" align="center" valign="top" style="background:url(IMG/IMG_TOP.jpg) no-repeat top center; "><table width="100%" cellspacing="0" cellpadding="0">
@@ -68,7 +87,8 @@
             <tr>
                 <td align="center" valign="top"><table width="100%" cellspacing="0" cellpadding="0">
                     <tr>
-                        <td align="center"><div style="width:50px; height:50px; float:center; border-radius: 50%; border: 0px solid #eee; overflow: hidden; background-color:#900" > <img src="IMG/ico_01.png" /></div></td>
+                        <td align="center"><div style="width:50px; height:50px; float:center; border-radius: 50%; border: 0px solid #eee; overflow: hidden; background-color:#900" > <a
+                                href="index.jsp"><img src="IMG/ico_01.png" /></a></div></td>
                     </tr>
                     <tr>
                         <td><table width="100%" cellspacing="5" cellpadding="0">
@@ -139,37 +159,33 @@
     </tr>
 
     <tr>
-        <td height="1" align="center" valign="top" ><table width="100%" cellspacing="10" cellpadding="0">
+        <td height="1" align="center" valign="top" >
+            <table width="100%" cellspacing="10" cellpadding="0">
             <tr>
                 <td width="26%" height="35" align="right" valign="middle">登报人姓名：</td>
-                <td width="74%" height="35" ><input name="xm" type="text"  size="24"  style="width:90%; height:30px;"/></td>
+                <td width="74%" height="35" ><%=xm%></td>
             </tr>
             <tr>
                 <td width="26%" height="35" align="right" valign="middle">联系方式：</td>
-                <td height="35"><input name="tel" type="text"  size="24"  style="width:90%; height:30px;"/></td>
+                <td height="35"><%=tel%></td>
             </tr>
             <tr>
                 <td height="35" align="right" valign="middle">登报内容：</td>
-                <td height="35"><input name="memo" type="text"  size="24"  style="width:90%; height:100px;"/></td>
+                <td height="35"><%=memo%></td>
             </tr>
-        </table></td>
-    </tr>
-    <tr>
-        <td height="5" align="center" valign="top">&nbsp;</td>
-    </tr>
-    <tr>
-        <td height="10" align="center" valign="top"><table width="90%" height="50" cellspacing="0" cellpadding="0" style="border-radius: 10px; background: #900;">
             <tr>
-                <td align="center" valign="middle" onClick="document.form1.action='tj_chk.jsp';if(DataLength(form1.xm.value)<2){alert('请填写姓名');form1.xm.focus();return false};if(DataLength(form1.tel.value)<11){alert('请填写正确的手机号码');form1.tel.focus();return false};if(DataLength(form1.memo.value)<2){alert('请填写登报内容');form1.memo.focus();return false};document.form1.submit();">
-                    <m>
-
-                    <e>提 交</e>
-
-                    </m>
-                </td>
+                <td height="35" align="right" valign="middle">提交时间：</td>
+                <td height="35"><%=create_time%></td>
             </tr>
-        </table></td>
+            <tr>
+                <td height="35" align="right" valign="middle">标志：</td>
+                <td height="35"><%=bz2%></td>
+            </tr>
+            </table>
+        </td>
     </tr>
+
+
 </table>
 </form>
 </body>

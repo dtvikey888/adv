@@ -9,7 +9,7 @@ public class MysqlDB {
 	String url ="jdbc:mysql://127.0.0.1:3306/other?useUnicode=true&characterEncoding=utf-8";
 	   
 	String user = "root";
-	String password = "root";
+	String password = "fandir";
 	Connection conn = null;
 	Statement stmt = null;
 	ResultSet rs = null;
